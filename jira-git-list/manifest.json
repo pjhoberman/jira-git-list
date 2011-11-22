@@ -1,0 +1,21 @@
+{
+  "name": "Jira git list",
+  "version": "1.0",
+  "description": "Prints a list of all git branches that should be on staging`",
+  "icons": { "128": "git_logo.jpg" },
+  "content_scripts": [
+    {
+      "matches": ["https://jira.mapmyfitness.com/*"],
+      "js": ["jquery.1.6.2.js"]
+    }
+  ],
+  "page_action": {
+    "default_icon": "git_logo.jpg", // optional
+    "default_title": "git list"      // optional; shown in tooltip
+/*     "default_popup": "popup.html"        // optional */
+  },
+  "background_page": "background.html",
+  "permissions" : [
+    "tabs", "https://jira.mapmyfitness.com/*"
+  ]
+}

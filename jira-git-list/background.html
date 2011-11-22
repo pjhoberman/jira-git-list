@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+ * Copyright (c) 2010 The Chromium Authors. All rights reserved.  Use of this
+ * source code is governed by a BSD-style license that can be found in the
+ * LICENSE file.
+-->
+<html>
+  <head>
+    <script type="text/javascript">
+      // Called when the url of a tab changes.
+      function checkForValidUrl(tabId, changeInfo, tab) {
+        if (tab.url.indexOf('jira.mapmyfitness.com/secure/Dashboard.jspa') > -1) {
+          // ... show the page action.
+          chrome.pageAction.show(tabId);
+        }
+      };
+
+      // Listen for any changes to the URL of any tab.
+      chrome.tabs.onUpdated.addListener(checkForValidUrl);
+      
+      // on click
+      chrome.pageAction.onClicked.addListener(function(tab) {
+        chrome.tabs.executeScript(null, {file: "jira-git.js"});
+      });
+      
+    </script>
+  </head>
+</html>
