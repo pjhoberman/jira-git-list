@@ -9,7 +9,7 @@
     <script type="text/javascript">
       // Called when the url of a tab changes.
       function checkForValidUrl(tabId, changeInfo, tab) {
-        if (tab.url.indexOf('jira.mapmyfitness.com/secure/Dashboard.jspa') > -1) {
+        if (tab.url.indexOf('mapmyfitness.atlassian.net/secure/Dashboard.jspa') > -1) {
           // ... show the page action.
           chrome.pageAction.show(tabId);
         }
